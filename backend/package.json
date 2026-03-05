@@ -1,5 +1,5 @@
 {
-  "name": "pg-visual-backend",
+  "name": "pg_visual_backend",
   "version": "1.0.0",
   "description": "PG Visual - PostgreSQL Learning Portal Backend",
   "main": "src/index.js",
