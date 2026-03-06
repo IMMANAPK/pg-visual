@@ -128,7 +128,28 @@ const translations = {
     noSavedConnections: "No saved connections yet",
     confirmDelete: "Delete this connection?",
     delete: "Delete",
-    sampleDb: "Sample DB"
+    sampleDb: "Sample DB",
+
+    // ERD Diagram
+    erdTitle: "Schema Diagram",
+    builder: "Builder",
+
+    // Query Builder
+    queryBuilder: "Visual Query Builder",
+    selectTable: "Select Table",
+    selectColumns: "Select Columns",
+    clickToSelect: "click to select",
+    addJoins: "Add JOINs",
+    whereConditions: "WHERE Conditions",
+    orderAndLimit: "ORDER BY & LIMIT",
+    orderBy: "Order by...",
+    generatedSQL: "Generated SQL",
+    useThisQuery: "Use This Query",
+
+    // Export Panel
+    export: "Export",
+    noDataToExport: "No data to export",
+    copiedToClipboard: "Copied to clipboard!"
   },
 
   thanglish: {
@@ -258,7 +279,28 @@ const translations = {
     noSavedConnections: "Saved connections illa",
     confirmDelete: "Itha delete pannava?",
     delete: "Delete",
-    sampleDb: "Sample DB"
+    sampleDb: "Sample DB",
+
+    // ERD Diagram
+    erdTitle: "Schema Diagram",
+    builder: "Builder",
+
+    // Query Builder
+    queryBuilder: "Visual Query Builder",
+    selectTable: "Table Select Pannu",
+    selectColumns: "Columns Select Pannu",
+    clickToSelect: "click pannu select panna",
+    addJoins: "JOINs Add Pannu",
+    whereConditions: "WHERE Conditions",
+    orderAndLimit: "ORDER BY & LIMIT",
+    orderBy: "Order by...",
+    generatedSQL: "Generated SQL",
+    useThisQuery: "Itha Use Pannu",
+
+    // Export Panel
+    export: "Export",
+    noDataToExport: "Export panna data illa",
+    copiedToClipboard: "Clipboard ku copy aachu!"
   },
 
   tamil: {
@@ -388,7 +430,28 @@ const translations = {
     noSavedConnections: "சேமித்த இணைப்புகள் இல்லை",
     confirmDelete: "இதை நீக்கவா?",
     delete: "நீக்கு",
-    sampleDb: "மாதிரி DB"
+    sampleDb: "மாதிரி DB",
+
+    // ERD Diagram
+    erdTitle: "ஸ்கீமா வரைபடம்",
+    builder: "கட்டமைப்பான்",
+
+    // Query Builder
+    queryBuilder: "விஷுவல் வினவல் கட்டமைப்பான்",
+    selectTable: "அட்டவணை தேர்வு",
+    selectColumns: "நெடுவரிசைகள் தேர்வு",
+    clickToSelect: "தேர்வு செய்ய கிளிக் செய்",
+    addJoins: "JOINகள் சேர்",
+    whereConditions: "WHERE நிபந்தனைகள்",
+    orderAndLimit: "ORDER BY & LIMIT",
+    orderBy: "வரிசைப்படுத்து...",
+    generatedSQL: "உருவாக்கப்பட்ட SQL",
+    useThisQuery: "இந்த வினவலை பயன்படுத்து",
+
+    // Export Panel
+    export: "ஏற்றுமதி",
+    noDataToExport: "ஏற்றுமதி செய்ய தரவு இல்லை",
+    copiedToClipboard: "கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது!"
   },
 
   hindi: {
@@ -518,7 +581,28 @@ const translations = {
     noSavedConnections: "कोई सेव्ड कनेक्शन नहीं",
     confirmDelete: "इसे डिलीट करें?",
     delete: "डिलीट",
-    sampleDb: "Sample DB"
+    sampleDb: "Sample DB",
+
+    // ERD Diagram
+    erdTitle: "स्कीमा डायग्राम",
+    builder: "बिल्डर",
+
+    // Query Builder
+    queryBuilder: "विज़ुअल क्वेरी बिल्डर",
+    selectTable: "टेबल चुनें",
+    selectColumns: "कॉलम चुनें",
+    clickToSelect: "चुनने के लिए क्लिक करें",
+    addJoins: "JOINs जोड़ें",
+    whereConditions: "WHERE शर्तें",
+    orderAndLimit: "ORDER BY & LIMIT",
+    orderBy: "क्रमबद्ध करें...",
+    generatedSQL: "जनरेटेड SQL",
+    useThisQuery: "इस क्वेरी का उपयोग करें",
+
+    // Export Panel
+    export: "एक्सपोर्ट",
+    noDataToExport: "एक्सपोर्ट करने के लिए डेटा नहीं",
+    copiedToClipboard: "क्लिपबोर्ड में कॉपी हो गया!"
   }
 };
 

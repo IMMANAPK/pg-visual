@@ -13,6 +13,9 @@ import AuthPage from './components/auth/AuthPage'
 import OptimizerAgent from './components/agents/OptimizerAgent'
 import DebugAgent from './components/agents/DebugAgent'
 import QuizAgent from './components/agents/QuizAgent'
+import ERDiagram from './components/ERDiagram'
+import QueryBuilder from './components/QueryBuilder'
+import ExportPanel from './components/ExportPanel'
 import translations from './translations'
 import API_URL from './config'
 
@@ -76,6 +79,9 @@ function App() {
   const [connectionId, setConnectionId] = useState(null)
   const [sessionId, setSessionId] = useState(null)
   const [schema, setSchema] = useState(defaultSchema)
+
+  // Sidebar view state: 'schema', 'erd', 'builder'
+  const [sidebarView, setSidebarView] = useState('schema')
 
   // Get current translations
   const t = translations[language] || translations.english
@@ -330,22 +336,74 @@ function App() {
 
       <main className="main">
         <aside className="sidebar">
-          <SchemaViewer
-            schema={schema}
-            onTableClick={handleTableClick}
-            t={t}
-          />
-          <SavedConnections
-            onConnect={handleDbConnect}
-            activeConnectionId={connectionId}
-            t={t}
-          />
-          <QueryHistory
-            history={history}
-            onHistoryClick={handleHistoryClick}
-            onClear={clearHistory}
-            t={t}
-          />
+          {/* Sidebar View Tabs */}
+          <div className="sidebar-tabs">
+            <button
+              className={`sidebar-tab ${sidebarView === 'schema' ? 'active' : ''}`}
+              onClick={() => setSidebarView('schema')}
+              title={t.schema || 'Schema'}
+            >
+              <span>📋</span>
+              <span>{t.schema || 'Schema'}</span>
+            </button>
+            <button
+              className={`sidebar-tab ${sidebarView === 'erd' ? 'active' : ''}`}
+              onClick={() => setSidebarView('erd')}
+              title={t.erdTitle || 'ERD'}
+            >
+              <span>🗺️</span>
+              <span>ERD</span>
+            </button>
+            <button
+              className={`sidebar-tab ${sidebarView === 'builder' ? 'active' : ''}`}
+              onClick={() => setSidebarView('builder')}
+              title={t.queryBuilder || 'Builder'}
+            >
+              <span>🔧</span>
+              <span>{t.builder || 'Builder'}</span>
+            </button>
+          </div>
+
+          {/* Sidebar Content based on active view */}
+          {sidebarView === 'schema' && (
+            <>
+              <SchemaViewer
+                schema={schema}
+                onTableClick={handleTableClick}
+                t={t}
+              />
+              <SavedConnections
+                onConnect={handleDbConnect}
+                activeConnectionId={connectionId}
+                t={t}
+              />
+              <QueryHistory
+                history={history}
+                onHistoryClick={handleHistoryClick}
+                onClear={clearHistory}
+                t={t}
+              />
+            </>
+          )}
+
+          {sidebarView === 'erd' && (
+            <ERDiagram
+              schema={schema}
+              onTableSelect={handleTableClick}
+              t={t}
+            />
+          )}
+
+          {sidebarView === 'builder' && (
+            <QueryBuilder
+              schema={schema}
+              onBuildQuery={(query) => {
+                setSql(query)
+                setSidebarView('schema')
+              }}
+              t={t}
+            />
+          )}
         </aside>
 
         <section className="center">
@@ -364,6 +422,14 @@ function App() {
             loading={loading}
             t={t}
           />
+          {(result || explanation) && (
+            <ExportPanel
+              sql={sql}
+              result={result}
+              explanation={explanation}
+              t={t}
+            />
+          )}
         </section>
 
         <aside className="ai-panel">
