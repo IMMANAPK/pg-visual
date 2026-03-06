@@ -172,7 +172,7 @@ router.delete('/:id', authenticateToken, async (req, res) => {
     // Clear active connection if deleted
     const key = `${req.user.id}-${id}`;
     if (userConnections.has(key)) {
-      await userConnections.get(key).end();
+      await userConnections.get(key).pool.end();  // .pool.end(), not .end()
       userConnections.delete(key);
     }
 
@@ -247,7 +247,7 @@ router.post('/:id/connect', authenticateToken, async (req, res) => {
     // Store active connection
     const key = `${req.user.id}-active`;
     if (userConnections.has(key)) {
-      await userConnections.get(key).end();
+      await userConnections.get(key).pool.end();  // .pool.end(), not .end()
     }
     userConnections.set(key, { pool: userPool, connectionId: id });
 
