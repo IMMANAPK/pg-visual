@@ -96,7 +96,39 @@ const translations = {
     disconnect: "Disconnect",
     current: "Current",
     or: "OR",
-    securityNote: "Your connection is secure. We only run SELECT queries."
+    securityNote: "Your connection is secure. We only run SELECT queries.",
+
+    // Auth
+    login: "Login",
+    signup: "Sign Up",
+    logout: "Logout",
+    email: "Email",
+    password: "Password",
+    confirmPassword: "Confirm Password",
+    name: "Name",
+    loginSubtitle: "Welcome back! Login to continue",
+    signupSubtitle: "Create your account to get started",
+    loggingIn: "Logging in...",
+    creatingAccount: "Creating account...",
+    noAccount: "Don't have an account?",
+    haveAccount: "Already have an account?",
+    signupNow: "Sign up",
+    loginNow: "Login",
+    passwordMismatch: "Passwords do not match",
+    passwordTooShort: "Password must be at least 6 characters",
+    settings: "Settings",
+    queryHistory: "Query History",
+
+    // Saved Connections
+    savedConnections: "Saved Connections",
+    addConnection: "Add Connection",
+    connectionName: "Connection name",
+    saveConnection: "Save Connection",
+    setAsDefault: "Set as default",
+    noSavedConnections: "No saved connections yet",
+    confirmDelete: "Delete this connection?",
+    delete: "Delete",
+    sampleDb: "Sample DB"
   },
 
   thanglish: {
@@ -196,7 +228,37 @@ const translations = {
     disconnect: "Disconnect",
     current: "Current",
     or: "OR",
-    securityNote: "Ungal connection secure. SELECT queries mattum run aagum."
+    securityNote: "Ungal connection secure. SELECT queries mattum run aagum.",
+
+    // Auth
+    login: "Login Pannu",
+    signup: "Sign Up Pannu",
+    logout: "Logout",
+    email: "Email",
+    password: "Password",
+    confirmPassword: "Password Confirm Pannu",
+    name: "Peyar",
+    loginSubtitle: "Welcome back! Login pannunga",
+    signupSubtitle: "Account create pannunga",
+    loggingIn: "Logging in...",
+    creatingAccount: "Account create aaguthu...",
+    noAccount: "Account illa?",
+    haveAccount: "Already account irukka?",
+    signupNow: "Sign up pannu",
+    loginNow: "Login pannu",
+    passwordMismatch: "Passwords match aagala",
+    passwordTooShort: "Password minimum 6 characters venum",
+    settings: "Settings",
+    queryHistory: "Query History",
+    savedConnections: "Saved Connections",
+    addConnection: "Connection Add Pannu",
+    connectionName: "Connection peyar",
+    saveConnection: "Connection Save Pannu",
+    setAsDefault: "Default ah set pannu",
+    noSavedConnections: "Saved connections illa",
+    confirmDelete: "Itha delete pannava?",
+    delete: "Delete",
+    sampleDb: "Sample DB"
   },
 
   tamil: {
@@ -296,7 +358,37 @@ const translations = {
     disconnect: "துண்டிக்கவும்",
     current: "தற்போதைய",
     or: "அல்லது",
-    securityNote: "உங்கள் இணைப்பு பாதுகாப்பானது. SELECT மட்டும்."
+    securityNote: "உங்கள் இணைப்பு பாதுகாப்பானது. SELECT மட்டும்.",
+
+    // Auth
+    login: "உள்நுழை",
+    signup: "பதிவு செய்",
+    logout: "வெளியேறு",
+    email: "மின்னஞ்சல்",
+    password: "கடவுச்சொல்",
+    confirmPassword: "கடவுச்சொல் உறுதிப்படுத்து",
+    name: "பெயர்",
+    loginSubtitle: "மீண்டும் வருக! உள்நுழையவும்",
+    signupSubtitle: "கணக்கை உருவாக்கவும்",
+    loggingIn: "உள்நுழைகிறது...",
+    creatingAccount: "கணக்கு உருவாக்குகிறது...",
+    noAccount: "கணக்கு இல்லையா?",
+    haveAccount: "ஏற்கனவே கணக்கு உள்ளதா?",
+    signupNow: "பதிவு செய்",
+    loginNow: "உள்நுழை",
+    passwordMismatch: "கடவுச்சொற்கள் பொருந்தவில்லை",
+    passwordTooShort: "கடவுச்சொல் குறைந்தது 6 எழுத்துகள் வேண்டும்",
+    settings: "அமைப்புகள்",
+    queryHistory: "வினவல் வரலாறு",
+    savedConnections: "சேமித்த இணைப்புகள்",
+    addConnection: "இணைப்பு சேர்",
+    connectionName: "இணைப்பு பெயர்",
+    saveConnection: "இணைப்பை சேமி",
+    setAsDefault: "இயல்புநிலையாக அமை",
+    noSavedConnections: "சேமித்த இணைப்புகள் இல்லை",
+    confirmDelete: "இதை நீக்கவா?",
+    delete: "நீக்கு",
+    sampleDb: "மாதிரி DB"
   },
 
   hindi: {
@@ -396,7 +488,37 @@ const translations = {
     disconnect: "डिस्कनेक्ट",
     current: "वर्तमान",
     or: "या",
-    securityNote: "आपका कनेक्शन सुरक्षित है। सिर्फ SELECT queries।"
+    securityNote: "आपका कनेक्शन सुरक्षित है। सिर्फ SELECT queries।",
+
+    // Auth
+    login: "लॉगिन",
+    signup: "साइन अप",
+    logout: "लॉगआउट",
+    email: "ईमेल",
+    password: "पासवर्ड",
+    confirmPassword: "पासवर्ड कन्फर्म करें",
+    name: "नाम",
+    loginSubtitle: "वापस स्वागत है! लॉगिन करें",
+    signupSubtitle: "अपना अकाउंट बनाएं",
+    loggingIn: "लॉगिन हो रहा है...",
+    creatingAccount: "अकाउंट बन रहा है...",
+    noAccount: "अकाउंट नहीं है?",
+    haveAccount: "पहले से अकाउंट है?",
+    signupNow: "साइन अप करें",
+    loginNow: "लॉगिन करें",
+    passwordMismatch: "पासवर्ड मैच नहीं हो रहे",
+    passwordTooShort: "पासवर्ड कम से कम 6 अक्षर होने चाहिए",
+    settings: "सेटिंग्स",
+    queryHistory: "क्वेरी इतिहास",
+    savedConnections: "सेव्ड कनेक्शन्स",
+    addConnection: "कनेक्शन जोड़ें",
+    connectionName: "कनेक्शन का नाम",
+    saveConnection: "कनेक्शन सेव करें",
+    setAsDefault: "डिफ़ॉल्ट बनाएं",
+    noSavedConnections: "कोई सेव्ड कनेक्शन नहीं",
+    confirmDelete: "इसे डिलीट करें?",
+    delete: "डिलीट",
+    sampleDb: "Sample DB"
   }
 };
 

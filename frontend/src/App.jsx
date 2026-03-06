@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useAuth } from './context/AuthContext'
 import Playground from './components/Playground'
 import ResultTable from './components/ResultTable'
 import AIExplainer from './components/AIExplainer'
@@ -6,6 +7,9 @@ import SchemaViewer from './components/SchemaViewer'
 import QueryHistory from './components/QueryHistory'
 import QuerySuggest from './components/QuerySuggest'
 import DatabaseConnect from './components/DatabaseConnect'
+import SavedConnections from './components/SavedConnections'
+import UserMenu from './components/UserMenu'
+import AuthPage from './components/auth/AuthPage'
 import OptimizerAgent from './components/agents/OptimizerAgent'
 import DebugAgent from './components/agents/DebugAgent'
 import QuizAgent from './components/agents/QuizAgent'
@@ -48,6 +52,8 @@ const defaultSchema = {
 }
 
 function App() {
+  const { user, token, loading: authLoading, isAuthenticated } = useAuth()
+
   const [sql, setSql] = useState('SELECT * FROM users;')
   const [result, setResult] = useState(null)
   const [error, setError] = useState(null)
@@ -67,11 +73,19 @@ function App() {
   // Custom database state
   const [isCustomDb, setIsCustomDb] = useState(false)
   const [customDbName, setCustomDbName] = useState('')
+  const [connectionId, setConnectionId] = useState(null)
   const [sessionId, setSessionId] = useState(null)
   const [schema, setSchema] = useState(defaultSchema)
 
   // Get current translations
   const t = translations[language] || translations.english
+
+  // Use user's language setting if authenticated
+  useEffect(() => {
+    if (user?.settings?.language) {
+      setLanguage(user.settings.language)
+    }
+  }, [user])
 
   useEffect(() => {
     localStorage.setItem('pgvisual-language', language)
@@ -116,25 +130,35 @@ function App() {
     }
   }
 
-  const handleDbConnect = (newSchema, dbName, sid) => {
-    // Convert API schema format to our format
-    const formattedSchema = {}
-    for (const [table, columns] of Object.entries(newSchema)) {
-      formattedSchema[table] = columns.map(col => ({
-        name: col.name,
-        type: col.type.toUpperCase(),
-        isPrimaryKey: col.isPrimaryKey,
-        isForeignKey: col.isForeignKey
-      }))
+  const handleDbConnect = (newSchema, dbName, connId, connName) => {
+    // Handle both old format (from DatabaseConnect) and new format (from SavedConnections)
+    let formattedSchema = {}
+
+    if (newSchema && typeof newSchema === 'object') {
+      for (const [table, columns] of Object.entries(newSchema)) {
+        if (Array.isArray(columns)) {
+          formattedSchema[table] = columns.map(col => ({
+            name: col.name || col,
+            type: (col.type || 'unknown').toUpperCase(),
+            isPrimaryKey: col.isPrimaryKey || false,
+            isForeignKey: col.isForeignKey || false
+          }))
+        }
+      }
     }
 
     setSchema(formattedSchema)
-    setCustomDbName(dbName)
-    setSessionId(sid)
+    setCustomDbName(connName || dbName)
+    setConnectionId(connId)
+    setSessionId(connId) // For backwards compatibility
     setIsCustomDb(true)
     setResult(null)
     setError(null)
-    setSql(`SELECT * FROM ${Object.keys(formattedSchema)[0]} LIMIT 10;`)
+
+    const firstTable = Object.keys(formattedSchema)[0]
+    if (firstTable) {
+      setSql(`SELECT * FROM ${firstTable} LIMIT 10;`)
+    }
   }
 
   const handleDbDisconnect = () => {
@@ -156,18 +180,26 @@ function App() {
     setExplanation('')
 
     try {
-      // Use custom database endpoint if connected
-      const endpoint = isCustomDb
-        ? `${API_URL}/api/database/query`
-        : `${API_URL}/api/query`
+      let endpoint, body, headers = { 'Content-Type': 'application/json' }
 
-      const body = isCustomDb
-        ? { sql, sessionId }
-        : { sql }
+      // Use authenticated connection endpoint if logged in and connected
+      if (isAuthenticated && isCustomDb && connectionId) {
+        endpoint = `${API_URL}/api/connections/query`
+        body = { sql, connectionId }
+        headers['Authorization'] = `Bearer ${token}`
+      } else if (isCustomDb) {
+        // Legacy: non-authenticated custom database
+        endpoint = `${API_URL}/api/database/query`
+        body = { sql, sessionId }
+      } else {
+        // Sample database
+        endpoint = `${API_URL}/api/query`
+        body = { sql }
+      }
 
       const response = await fetch(endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify(body)
       })
 
@@ -250,6 +282,24 @@ function App() {
     { id: 'quiz', icon: '🧠', label: t.quizAgent }
   ]
 
+  // Show loading while checking auth
+  if (authLoading) {
+    return (
+      <div className="auth-container">
+        <div className="auth-card" style={{ textAlign: 'center' }}>
+          <span className="auth-logo">🐘</span>
+          <div className="spinner" style={{ margin: '20px auto' }}></div>
+          <p style={{ color: 'var(--text-muted)' }}>Loading...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Show auth page if not logged in
+  if (!isAuthenticated) {
+    return <AuthPage t={t} />
+  }
+
   return (
     <div className="app">
       <header className="header">
@@ -271,17 +321,11 @@ function App() {
             <option value="hindi">हिंदी</option>
           </select>
         </div>
-        <DatabaseConnect
-          onConnect={handleDbConnect}
-          onDisconnect={handleDbDisconnect}
-          isConnected={isCustomDb}
-          connectedDb={customDbName}
-          t={t}
-        />
         <div className="db-badge">
           <span className={`db-dot ${isCustomDb ? 'custom' : ''}`}></span>
-          {isCustomDb ? customDbName : t.database}
+          {isCustomDb ? customDbName : t.sampleDb || 'Sample DB'}
         </div>
+        <UserMenu t={t} />
       </header>
 
       <main className="main">
@@ -289,6 +333,11 @@ function App() {
           <SchemaViewer
             schema={schema}
             onTableClick={handleTableClick}
+            t={t}
+          />
+          <SavedConnections
+            onConnect={handleDbConnect}
+            activeConnectionId={connectionId}
             t={t}
           />
           <QueryHistory
