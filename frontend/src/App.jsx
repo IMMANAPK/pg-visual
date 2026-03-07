@@ -17,6 +17,8 @@ import ERDiagram from './components/ERDiagram'
 import QueryBuilder from './components/QueryBuilder'
 import ExportPanel from './components/ExportPanel'
 import QueryVisualizer from './components/QueryVisualizer'
+import LearningPath from './components/LearningPath'
+import './styles/learning-path.css'
 import translations from './translations'
 import API_URL from './config'
 
@@ -364,6 +366,14 @@ function App() {
               <span>🔧</span>
               <span>{t.builder || 'Builder'}</span>
             </button>
+            <button
+              className={`sidebar-tab ${sidebarView === 'learn' ? 'active' : ''}`}
+              onClick={() => setSidebarView('learn')}
+              title={t.learningPath || 'Learn'}
+            >
+              <span>📚</span>
+              <span>{t.learn || 'Learn'}</span>
+            </button>
           </div>
 
           {/* Sidebar Content based on active view */}
@@ -404,6 +414,17 @@ function App() {
                 setSidebarView('schema')
               }}
               t={t}
+            />
+          )}
+
+          {sidebarView === 'learn' && (
+            <LearningPath
+              onRunQuery={(query) => {
+                setSql(query)
+                runQuery()
+              }}
+              t={t}
+              language={language}
             />
           )}
         </aside>

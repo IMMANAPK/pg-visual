@@ -173,7 +173,30 @@ const translations = {
     limitDetail: "Returns only the specified number of rows",
     finalResult: "RESULT",
     resultStep: "Query complete!",
-    resultDetail: "The final result set is returned to you"
+    resultDetail: "The final result set is returned to you",
+
+    // Learning Path
+    learn: "Learn",
+    learningPath: "Learning Path",
+    points: "Points",
+    dayStreak: "Day Streak",
+    completed: "Completed",
+    badges: "Badges",
+    earnedBadges: "Earned Badges",
+    choosePath: "Choose Your Learning Path",
+    lessons: "lessons",
+    challenges: "challenges",
+    back: "Back",
+    backToLessons: "Back to Lessons",
+    theory: "Theory",
+    task: "Task",
+    hint: "Hint",
+    yourQuery: "Your Query",
+    testQuery: "Test Query",
+    needHint: "Need a hint?",
+    correctAnswer: "Correct! Well done!",
+    tryAgain: "Not quite right. Try again!",
+    alreadyCompleted: "You have already completed this challenge!"
   },
 
   thanglish: {
@@ -348,7 +371,30 @@ const translations = {
     limitDetail: "Specified number of rows mattum return aagum",
     finalResult: "RESULT",
     resultStep: "Query complete!",
-    resultDetail: "Final result set ungalukku return aagum"
+    resultDetail: "Final result set ungalukku return aagum",
+
+    // Learning Path
+    learn: "Learn",
+    learningPath: "Learning Path",
+    points: "Points",
+    dayStreak: "Day Streak",
+    completed: "Completed",
+    badges: "Badges",
+    earnedBadges: "Earned Badges",
+    choosePath: "Ungal Learning Path Choose Pannunga",
+    lessons: "lessons",
+    challenges: "challenges",
+    back: "Back",
+    backToLessons: "Lessons ku Back",
+    theory: "Theory",
+    task: "Task",
+    hint: "Hint",
+    yourQuery: "Ungal Query",
+    testQuery: "Query Test Pannu",
+    needHint: "Hint venum?",
+    correctAnswer: "Correct! Super!",
+    tryAgain: "Wrong answer. Try again!",
+    alreadyCompleted: "Itha neenga already complete panniteenga!"
   },
 
   tamil: {
@@ -523,7 +569,30 @@ const translations = {
     limitDetail: "குறிப்பிட்ட எண்ணிக்கையிலான வரிசைகள் மட்டும் திருப்பி அனுப்பப்படும்",
     finalResult: "முடிவு",
     resultStep: "வினவல் முடிந்தது!",
-    resultDetail: "இறுதி முடிவு தொகுப்பு உங்களுக்கு திருப்பி அனுப்பப்படும்"
+    resultDetail: "இறுதி முடிவு தொகுப்பு உங்களுக்கு திருப்பி அனுப்பப்படும்",
+
+    // Learning Path
+    learn: "கற்றல்",
+    learningPath: "கற்றல் பாதை",
+    points: "புள்ளிகள்",
+    dayStreak: "நாள் தொடர்",
+    completed: "முடிந்தது",
+    badges: "பதக்கங்கள்",
+    earnedBadges: "பெற்ற பதக்கங்கள்",
+    choosePath: "உங்கள் கற்றல் பாதையைத் தேர்ந்தெடுக்கவும்",
+    lessons: "பாடங்கள்",
+    challenges: "சவால்கள்",
+    back: "பின்",
+    backToLessons: "பாடங்களுக்கு திரும்பு",
+    theory: "கோட்பாடு",
+    task: "பணி",
+    hint: "குறிப்பு",
+    yourQuery: "உங்கள் வினவல்",
+    testQuery: "வினவலை சோதி",
+    needHint: "குறிப்பு வேண்டுமா?",
+    correctAnswer: "சரி! நன்று!",
+    tryAgain: "தவறு. மீண்டும் முயற்சிக்கவும்!",
+    alreadyCompleted: "இந்த சவாலை நீங்கள் ஏற்கனவே முடித்துவிட்டீர்கள்!"
   },
 
   hindi: {
@@ -698,7 +767,30 @@ const translations = {
     limitDetail: "केवल स्पेसिफाइड संख्या में पंक्तियाँ रिटर्न होती हैं",
     finalResult: "रिजल्ट",
     resultStep: "क्वेरी पूरी!",
-    resultDetail: "फाइनल रिजल्ट सेट आपको रिटर्न होता है"
+    resultDetail: "फाइनल रिजल्ट सेट आपको रिटर्न होता है",
+
+    // Learning Path
+    learn: "सीखें",
+    learningPath: "लर्निंग पाथ",
+    points: "पॉइंट्स",
+    dayStreak: "डे स्ट्रीक",
+    completed: "पूर्ण",
+    badges: "बैजेस",
+    earnedBadges: "अर्जित बैजेस",
+    choosePath: "अपना लर्निंग पाथ चुनें",
+    lessons: "पाठ",
+    challenges: "चुनौतियाँ",
+    back: "वापस",
+    backToLessons: "पाठों पर वापस",
+    theory: "थ्योरी",
+    task: "टास्क",
+    hint: "हिंट",
+    yourQuery: "आपकी क्वेरी",
+    testQuery: "क्वेरी टेस्ट करें",
+    needHint: "हिंट चाहिए?",
+    correctAnswer: "सही! बढ़िया!",
+    tryAgain: "गलत। फिर से कोशिश करें!",
+    alreadyCompleted: "आपने यह चुनौती पहले ही पूरी कर ली है!"
   }
 };
 
