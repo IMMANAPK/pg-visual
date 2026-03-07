@@ -149,7 +149,31 @@ const translations = {
     // Export Panel
     export: "Export",
     noDataToExport: "No data to export",
-    copiedToClipboard: "Copied to clipboard!"
+    copiedToClipboard: "Copied to clipboard!",
+
+    // Query Visualizer
+    visualizerAgent: "Flow",
+    queryVisualizer: "Query Execution Flow",
+    runQueryToVisualize: "Run a query to see the execution flow",
+    fromStep: "Load data from table",
+    fromDetail: "Database reads all rows from the source table into memory",
+    joinStep: "Combine tables",
+    joinDetail: "Matches rows from both tables based on the ON condition",
+    whereStep: "Filter rows based on conditions",
+    whereDetail: "Only keeps rows that match the condition",
+    groupStep: "Group rows together",
+    groupDetail: "Combines rows with the same values",
+    havingStep: "Filter grouped results",
+    havingDetail: "Filters groups based on aggregate conditions",
+    selectStep: "Choose columns to return",
+    selectDetail: "Picks only the specified columns from the result",
+    orderStep: "Sort the results",
+    orderDetail: "Arranges rows in the specified order",
+    limitStep: "Limit number of rows",
+    limitDetail: "Returns only the specified number of rows",
+    finalResult: "RESULT",
+    resultStep: "Query complete!",
+    resultDetail: "The final result set is returned to you"
   },
 
   thanglish: {
@@ -300,7 +324,31 @@ const translations = {
     // Export Panel
     export: "Export",
     noDataToExport: "Export panna data illa",
-    copiedToClipboard: "Clipboard ku copy aachu!"
+    copiedToClipboard: "Clipboard ku copy aachu!",
+
+    // Query Visualizer
+    visualizerAgent: "Flow",
+    queryVisualizer: "Query Execution Flow",
+    runQueryToVisualize: "Execution flow paakka query run pannu",
+    fromStep: "Table la irundhu data load pannu",
+    fromDetail: "Database ellaa rows-um memory la load pannum",
+    joinStep: "Tables combine pannu",
+    joinDetail: "ON condition based la rows match pannum",
+    whereStep: "Condition based la rows filter pannu",
+    whereDetail: "Matching rows mattum keep pannum",
+    groupStep: "Rows-ah group pannu",
+    groupDetail: "Same values ulla rows combine aagum",
+    havingStep: "Grouped results filter pannu",
+    havingDetail: "Aggregate conditions based la groups filter aagum",
+    selectStep: "Return panna columns choose pannu",
+    selectDetail: "Specified columns mattum pick pannum",
+    orderStep: "Results sort pannu",
+    orderDetail: "Specified order la rows arrange aagum",
+    limitStep: "Rows count limit pannu",
+    limitDetail: "Specified number of rows mattum return aagum",
+    finalResult: "RESULT",
+    resultStep: "Query complete!",
+    resultDetail: "Final result set ungalukku return aagum"
   },
 
   tamil: {
@@ -451,7 +499,31 @@ const translations = {
     // Export Panel
     export: "ஏற்றுமதி",
     noDataToExport: "ஏற்றுமதி செய்ய தரவு இல்லை",
-    copiedToClipboard: "கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது!"
+    copiedToClipboard: "கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது!",
+
+    // Query Visualizer
+    visualizerAgent: "ஓட்டம்",
+    queryVisualizer: "வினவல் செயல்பாட்டு ஓட்டம்",
+    runQueryToVisualize: "செயல்பாட்டு ஓட்டத்தைப் பார்க்க வினவலை இயக்கவும்",
+    fromStep: "அட்டவணையிலிருந்து தரவை ஏற்றவும்",
+    fromDetail: "தரவுத்தளம் எல்லா வரிசைகளையும் நினைவகத்தில் படிக்கிறது",
+    joinStep: "அட்டவணைகளை இணைக்கவும்",
+    joinDetail: "ON நிபந்தனையின் அடிப்படையில் வரிசைகளை பொருத்தும்",
+    whereStep: "நிபந்தனைகளின் அடிப்படையில் வரிசைகளை வடிகட்டவும்",
+    whereDetail: "பொருந்தும் வரிசைகள் மட்டும் வைக்கப்படும்",
+    groupStep: "வரிசைகளை குழுவாக்கவும்",
+    groupDetail: "ஒரே மதிப்புகள் கொண்ட வரிசைகள் இணைக்கப்படும்",
+    havingStep: "குழு முடிவுகளை வடிகட்டவும்",
+    havingDetail: "திரட்டு நிபந்தனைகளின் அடிப்படையில் குழுக்கள் வடிகட்டப்படும்",
+    selectStep: "திருப்பி அனுப்ப நெடுவரிசைகளைத் தேர்ந்தெடுக்கவும்",
+    selectDetail: "குறிப்பிட்ட நெடுவரிசைகள் மட்டும் எடுக்கப்படும்",
+    orderStep: "முடிவுகளை வரிசைப்படுத்தவும்",
+    orderDetail: "குறிப்பிட்ட வரிசையில் வரிசைகள் அமைக்கப்படும்",
+    limitStep: "வரிசைகளின் எண்ணிக்கையை வரம்பிடவும்",
+    limitDetail: "குறிப்பிட்ட எண்ணிக்கையிலான வரிசைகள் மட்டும் திருப்பி அனுப்பப்படும்",
+    finalResult: "முடிவு",
+    resultStep: "வினவல் முடிந்தது!",
+    resultDetail: "இறுதி முடிவு தொகுப்பு உங்களுக்கு திருப்பி அனுப்பப்படும்"
   },
 
   hindi: {
@@ -602,7 +674,31 @@ const translations = {
     // Export Panel
     export: "एक्सपोर्ट",
     noDataToExport: "एक्सपोर्ट करने के लिए डेटा नहीं",
-    copiedToClipboard: "क्लिपबोर्ड में कॉपी हो गया!"
+    copiedToClipboard: "क्लिपबोर्ड में कॉपी हो गया!",
+
+    // Query Visualizer
+    visualizerAgent: "फ्लो",
+    queryVisualizer: "क्वेरी एक्ज़ीक्यूशन फ्लो",
+    runQueryToVisualize: "एक्ज़ीक्यूशन फ्लो देखने के लिए क्वेरी चलाएं",
+    fromStep: "टेबल से डेटा लोड करें",
+    fromDetail: "डेटाबेस सभी पंक्तियों को मेमोरी में पढ़ता है",
+    joinStep: "टेबल्स को जोड़ें",
+    joinDetail: "ON कंडीशन के आधार पर पंक्तियों को मैच करता है",
+    whereStep: "कंडीशन के आधार पर पंक्तियाँ फ़िल्टर करें",
+    whereDetail: "केवल मैचिंग पंक्तियाँ रखी जाती हैं",
+    groupStep: "पंक्तियों को ग्रुप करें",
+    groupDetail: "समान वैल्यू वाली पंक्तियाँ जोड़ी जाती हैं",
+    havingStep: "ग्रुप्ड रिजल्ट्स फ़िल्टर करें",
+    havingDetail: "एग्रीगेट कंडीशन के आधार पर ग्रुप्स फ़िल्टर होते हैं",
+    selectStep: "रिटर्न करने के लिए कॉलम चुनें",
+    selectDetail: "केवल स्पेसिफाइड कॉलम्स पिक होते हैं",
+    orderStep: "रिजल्ट्स को सॉर्ट करें",
+    orderDetail: "स्पेसिफाइड ऑर्डर में पंक्तियाँ अरेंज होती हैं",
+    limitStep: "पंक्तियों की संख्या लिमिट करें",
+    limitDetail: "केवल स्पेसिफाइड संख्या में पंक्तियाँ रिटर्न होती हैं",
+    finalResult: "रिजल्ट",
+    resultStep: "क्वेरी पूरी!",
+    resultDetail: "फाइनल रिजल्ट सेट आपको रिटर्न होता है"
   }
 };
 

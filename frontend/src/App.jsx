@@ -16,6 +16,7 @@ import QuizAgent from './components/agents/QuizAgent'
 import ERDiagram from './components/ERDiagram'
 import QueryBuilder from './components/QueryBuilder'
 import ExportPanel from './components/ExportPanel'
+import QueryVisualizer from './components/QueryVisualizer'
 import translations from './translations'
 import API_URL from './config'
 
@@ -283,6 +284,7 @@ function App() {
 
   const agents = [
     { id: 'tutor', icon: '🎓', label: t.tutorAgent },
+    { id: 'visualizer', icon: '🎬', label: t.visualizerAgent || 'Flow' },
     { id: 'optimizer', icon: '⚡', label: t.optimizerAgent },
     { id: 'debug', icon: '🔧', label: t.debugAgent },
     { id: 'quiz', icon: '🧠', label: t.quizAgent }
@@ -454,6 +456,14 @@ function App() {
                 explanation={explanation}
                 loading={explaining}
                 onExplainAgain={() => result && fetchExplanation(sql, result)}
+                t={t}
+              />
+            )}
+
+            {activeAgent === 'visualizer' && (
+              <QueryVisualizer
+                sql={sql}
+                result={result}
                 t={t}
               />
             )}

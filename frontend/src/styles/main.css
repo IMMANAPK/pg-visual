@@ -3124,3 +3124,241 @@ body {
   border-bottom: 1px solid rgba(240, 136, 62, 0.2);
   flex-shrink: 0;
 }
+/* ========== QUERY VISUALIZER ========== */
+
+.query-visualizer {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.query-visualizer.empty {
+  padding: 20px;
+}
+
+.qv-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.qv-header h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.qv-icon {
+  font-size: 16px;
+}
+
+.qv-empty {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-muted);
+}
+
+.qv-empty .empty-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+
+/* Controls */
+.qv-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.qv-btn {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.qv-btn:hover {
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+.qv-progress {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-left: auto;
+}
+
+.qv-separator {
+  color: var(--text-muted);
+}
+
+.qv-speed {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.qv-speed-select {
+  padding: 4px 8px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Flow Diagram */
+.qv-flow {
+  display: flex;
+  align-items: center;
+  padding: 20px 16px;
+  overflow-x: auto;
+  gap: 0;
+}
+
+.qv-step {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.qv-step-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  background: var(--bg-tertiary);
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.qv-step.active .qv-step-node {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+}
+
+.qv-step.completed .qv-step-node {
+  opacity: 0.7;
+}
+
+.qv-step-icon {
+  font-size: 20px;
+}
+
+.qv-step-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.qv-connector {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.qv-arrow {
+  font-size: 18px;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+
+.qv-connector.active .qv-arrow {
+  color: var(--accent-cyan);
+}
+
+/* Step Detail */
+.qv-detail {
+  padding: 16px;
+  margin: 0 16px 16px;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-cyan);
+}
+
+.qv-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.qv-detail-header h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.qv-detail-icon {
+  font-size: 20px;
+}
+
+.qv-detail-desc {
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.qv-detail-info {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.qv-detail-code {
+  background: var(--bg-tertiary);
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-cyan);
+  overflow-x: auto;
+}
+
+/* Progress Bar */
+.qv-progress-bar {
+  height: 4px;
+  background: var(--bg-tertiary);
+}
+
+.qv-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+  transition: width 0.3s ease;
+}
+
+/* Animation */
+@keyframes stepPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(88, 166, 255, 0.4); }
+  50% { box-shadow: 0 0 20px 5px rgba(88, 166, 255, 0.2); }
+}
+
+.qv-step.active .qv-step-node {
+  animation: stepPulse 1.5s ease-in-out infinite;
+}
